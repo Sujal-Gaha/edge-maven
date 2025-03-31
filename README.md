@@ -1,84 +1,53 @@
-# Nx Project Setup
+# Edge Maven
 
-This repository serves as a reusable Nx monorepo setup with a frontend and backend application, as well as several libraries for backend database interactions, reusable components, and domain logic.
+A React-based tool for solving Dijkstra's algorithm problems and beyond.
+## Description
 
-## Applications
+Edge-Maven is a web application built with React that allows users to create custom graphs and solve shortest path problems using Dijkstra's algorithm. The tool is designed to be user-friendly, allowing users to input nodes and edges dynamically through an interactive interface. While the primary focus is on Dijkstra's algorithm, the project aims to expand to include other graph algorithms in the future.
 
-### Backend
+---
+## Features
 
-The backend application is responsible for the server-side logic of the project. It handles API requests and serves data to the frontend.
+- **Graph Creation**: Users can create custom graphs by adding nodes and weighted edges.
+- **Dijkstra's Algorithm**: The application computes the shortest path from a source node to all other reachable nodes.
+- **Interactive UI**: An intuitive interface for easy interaction with the graph.
+- **Visualization**: Visual representation of the graph, including the shortest paths once computed.
 
-### Frontend
+---
+## Installation
 
-The frontend application is responsible for the client-side interface. It interacts with the backend to provide a seamless user experience.
-
-## Libraries
-
-### Backend-DB
-
-This library contains all database interactions and models. It ensures a clean separation of data logic from the backend application.
-
-### Components
-
-This library contains reusable UI components used across the frontend application. It promotes reusability and maintainability of the codebase.
-
-### Domains
-
-This library contains the domain logic and business rules. It ensures that the domain logic is decoupled from the application logic, making it easier to maintain and scale.
-
-## Getting Started
-
-### Prerequisites
-
-- [Node.js](https://nodejs.org/) (v14.x or higher)
-- [Yarn](https://yarnpkg.com/) (recommended for package management)
-
-### Installation
+To run Edge-Maven locally, follow these steps:
 
 1. Clone the repository:
-   ```sh
-   git clone https://github.com/Sujal-Gaha/nx-project-setup.git
-   ```
+```bash
+git clone https://github.com/Sujal-Gaha/edge-maven.git
+cd edge-maven
+```
 
-2. Go inside the repository and install the dependencies:
-    ```sh
-    yarn install
-    ```
+2. Install dependencies:
 
-3. Remove the existing remote origin:
-    ```sh
-    git remote remove origin
-    ```
+```bash
+yarn
+```
 
-4. Add your GitHub repository as the new remote origin:
-    ```sh
-    git remote add origin https://github.com/your-username/your-repo-name.git
-    ```
+3. Start the development server:
 
-5. Verify the new remote origin:
-    ```sh
-    git remote -v
-    ```
+```bash
+yarn dev:frontend # for frontend server
+yarn dev:backend # for backend server
+```
 
-6. Run the command: (`Optional`)
-    ```sh
-    yarn dev:frontend # for running the frontend application
-    yarn dev:backend # for running the backend application
-    yarn build # for building the projects
-    ```
+---
+## Usage
 
-### Fetching Other Branches
+1. **Adding Nodes**: Click on "Add Node" to create new nodes.
+2. **Adding Edges**: Click on "Add Edge" and select the source and target nodes, then enter a weight for the edge.
+3. **Running Dijkstra's Algorithm**:
+   - Select a source node from the dropdown menu.
+   - Click "Compute Shortest Path."
+4. **View Results**: The application will display the shortest path distances from the source to all other reachable nodes.
 
-- If you want to explore different setups, you can fetch other branches as well. For example, to get the Nx project setup with shadcn components:
+---
+## License
 
-    ```sh
-    git fetch origin sujal/setup-shadcn
-    git checkout sujal/setup-shadcn
-    ```
-- To check other branches, you can list all available branches:
-
-    ```sh
-    git branch -a
-    ```
-
-## Enjoy coding and feel free to modify this README to better suit your project's needs!
+Edge-Maven is open source under the MIT License.
