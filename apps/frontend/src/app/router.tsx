@@ -1,6 +1,7 @@
 import { createBrowserRouter, Outlet, RouteObject } from 'react-router-dom';
 import { _FULL_ROUTES } from './route';
 import { SidebarLayout } from '../components/SidebarLayout';
+import { GraphPage } from '../pages/graph.page';
 
 const authRoutes: RouteObject[] = [
   {
@@ -24,7 +25,7 @@ export const router = createBrowserRouter([
     children: [
       {
         path: _FULL_ROUTES.HOME,
-        element: <h1>Home Page</h1>,
+        element: <GraphPage />,
       },
     ],
   },
