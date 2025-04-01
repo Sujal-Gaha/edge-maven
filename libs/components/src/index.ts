@@ -12,6 +12,7 @@ export * from './ui/hover-card';
 export * from './ui/input';
 export * from './ui/label';
 export * from './ui/pagination';
+export * from './ui/scroll-area';
 export * from './ui/skeleton';
 export * from './ui/sonner';
 export * from './ui/switch';
