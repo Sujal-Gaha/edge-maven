@@ -1,5 +1,4 @@
-import type React from 'react';
-import { useState } from 'react';
+import { DragEvent, useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { CircleIcon, Plus, ArrowRight, ArrowLeftRight, Trash2, Save, ChevronDown, Settings } from 'lucide-react';
 import {
@@ -25,9 +24,11 @@ export const GraphControls = () => {
   const [isBidirectional, setIsBidirectional] = useState(false);
   const [isMinimized, setIsMinimized] = useState(true);
 
-  const onDragStart = (event: React.DragEvent<HTMLDivElement>, nodeType: string) => {
-    event.dataTransfer.setData('application/reactflow', nodeType);
-    event.dataTransfer.effectAllowed = 'move';
+  const onDragStart = (event: DragEvent<HTMLDivElement> | MouseEvent | TouchEvent, nodeType: string) => {
+    if ('dataTransfer' in event) {
+      event.dataTransfer.setData('application/reactflow', nodeType);
+      event.dataTransfer.effectAllowed = 'move';
+    }
   };
 
   const toggleMinimized = () => {
